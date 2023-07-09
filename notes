@@ -1,0 +1,14 @@
+<!-- configure git in local and push to github repository
+git init
+git branch -M main
+git add .
+git commit -m "episode1"
+git remote add origin https://github.com/gayusuryu/react-learn.git ==> copy from github repository
+git push origin main -->
+
+<!-- npm is not node package manager. Its a package manager for js 
+do an npm init and give the details and package.json is created . package.json is a configuration for npm-->
+
+<!-- Most important dependency is a bundler(eg:webpack) which bundles all code to PRPD ready .Here we are using parcel as a bundler-->
+
+<!-- ~ - update to major version and ^-update to minor version -->

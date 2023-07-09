@@ -1,0 +1,27 @@
+{
+  "name": "react_learn",
+  "version": "1.0.0",
+  "description": "This is React Learn by Gayathri K",
+  "main": "App.js",
+  "scripts": {
+    "test": "jest"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/gayusuryu/react-learn.git"
+  },
+  "keywords": [
+    "react",
+    "learn",
+    "gayathri"
+  ],
+  "author": "Gayathri K",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/gayusuryu/react-learn/issues"
+  },
+  "homepage": "https://github.com/gayusuryu/react-learn#readme",
+  "devDependencies": {
+    "parcel": "^2.9.3"
+  }
+}
