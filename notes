@@ -9,6 +9,40 @@ git push origin main -->
 <!-- npm is not node package manager. Its a package manager for js 
 do an npm init and give the details and package.json is created . package.json is a configuration for npm-->
 
-<!-- Most important dependency is a bundler(eg:webpack) which bundles all code to PRPD ready .Here we are using parcel as a bundler-->
+<!-- Most important dependency is a bundler(eg:webpack) which bundles all code to PRPD ready .Here we are using parcel as a bundler
+Parcel does ==> Dev Build,Create Local server, HMR - Hot Module Replacement ,It has File Watching Algorithm written in C++,
+Faster Builds coz of caching,Image Optimization,Minification,Bundling,Compress,Consistent Hashing,Code splitting,
+Differential bundling - support older versions,Diagnostics,Error Handling,Tree shaking - remove unused code,
+transpiler - converts one code to another ,eg- ts to js,Different dev and prod builds-->
+
+<!-- PROD build - npx parcel build index.html ==>Target "main" declares an output file path of "App.js" 
+    which does not match the compiled bundle type "html". This is because of App.js in main in package.json-->
 
 <!-- ~ - update to major version and ^-update to minor version -->
+
+<!-- npx - is used to execute/ignite the app eg- npx parcel index.html-->
+
+<!-- CDN - content delivery network is a network of servers that distribute content from origin server to other
+ CORS - Cross Origin Resource Sharing == is a request to resourse from other domain -->
+
+ <!-- Browser scripts cannot have imports or exports. for this error give type="module" in script type ="module" src="./App.js"-->
+ 
+ <!-- Babel - js compiler , (converts ECMAScript2015 to older versions - get browser compatible js out)-->
+
+ <!--https://browserslist.dev/?q=bGFzdCAxMiB2ZXJzaW9u-->
+ 
+<!-- JSX is transpiled before it reaches JS engine and Babel inside Parcel is doing this.
+JSX ==>React.createEment ==>React.createElement(JS Object) ==> HTMLElement(render) -->
+
+<!-- React Component ==> 1)Class based component (old), 2==>Functional component-->
+
+<!-- JSX helps you from cross site scripting malicious attack. Cross site scripting happens if a JS from any api runs in our browser-->
+
+<!--JSX can have only one parent element..So we cant create <div></div><div></div>..So the solution to this is react fragment -->
+
+<!--Instead of React.Fragment react created/gives an empty tag and we can use that <></> -->
+
+<!-- Note: Padding is the space between content and border, which is the next component of the box.
+Margin is the outer space around the box. -->
+
+<!--Flex is the value of css display . By using display flex in parent element, child elements automatically align like column or row with auto width and auto height.-->
