@@ -46,3 +46,5 @@ JSX ==>React.createEment ==>React.createElement(JS Object) ==> HTMLElement(rende
 Margin is the outer space around the box. -->
 
 <!--Flex is the value of css display . By using display flex in parent element, child elements automatically align like column or row with auto width and auto height.-->
+
+<!-- System design interview -- config driven UI means the website is driven by data(config)>
