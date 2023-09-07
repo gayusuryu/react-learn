@@ -35,6 +35,7 @@ transpiler - converts one code to another ,eg- ts to js,Different dev and prod b
 JSX ==>React.createEment ==>React.createElement(JS Object) ==> HTMLElement(render) -->
 
 <!-- React Component ==> 1)Class based component (old), 2==>Functional component-->
+<!--React Component is the normal js fn that returns jsx -->
 
 <!-- JSX helps you from cross site scripting malicious attack. Cross site scripting happens if a JS from any api runs in our browser-->
 
@@ -48,3 +49,32 @@ Margin is the outer space around the box. -->
 <!--Flex is the value of css display . By using display flex in parent element, child elements automatically align like column or row with auto width and auto height.-->
 
 <!-- System design interview -- config driven UI means the website is driven by data(config)>
+
+<!-- <RestaurantCard key={index} resData={restaurant}/> Dont prefer index as key
+Reorders can also cause issues with component state when indexes are used as keys. Component instances are updated and reused based on their key. If the key is an index, moving an item changes it. As a result, component state for things like uncontrolled inputs can get mixed up and updated in unexpected ways. -->
+
+<!-- Two types of export ==> Default and Named export ==> Named export is add export in front of CDN_URL here for example-->
+<!--For named export and to import that use {} in import. eg - import { CDN_URL } from "../utils/constants"; -->
+
+<!--We can have named and default export in a single file together. but no two default export -->
+
+<!--React Hooks - normal js fn ==>useState(),useEffect() .And import these as named import-->
+
+<!--Whenever a state variable changes react rerenderes the component-->
+
+<!--Reconciliation(React Fiber) ==> Virtual DOM is a representation of actual DOM 
+React Fiber is the new way of finding the div and updating the DOM
+Diff Algorithm - diff btw old virtual DOM and new virtual DOM
+Vitual DOM actually is a object representation of actual DOM and react compares this obj when change happens and update the 
+actual DOM -->
+
+<!--React is fast because react is doing efficient DOM manipulation-->
+
+<!-- Monolith means putting everthing in single project eg-java,jsp,db all in one project like done in BOL AMEX-->
+
+<!-- Microservices used for separation of concern- Single responsibility principle-->
+
+<!-- How const var is changed here -  const [btnName,setBtnName] = useState("Login"); ==> Its because the second time its called a 
+new btnName is created. And header will be rendered again but only the button is changed -->
+
+<!-- Whenever a state varibale update react triggers a reconciliation cycle -- 
