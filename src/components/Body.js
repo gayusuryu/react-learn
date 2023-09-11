@@ -1,7 +1,11 @@
 import RestaurantCard from "./RestaurantCard";
+import { Link } from "react-router-dom";
 import resList from "../utils/mockData";
 import { useEffect, useState } from "react";
 import Shimmer from "./Shimmer";
+import useOnlineStatus from "../utils/useOnlineStatus";
+import TicTacToe from "../utils/TicTacToe";
+
 
 // <RestaurantCard resName="Platez" cuisine="Biriyani , Malabar , Asian "/>
 // <RestaurantCard resData={resList[0]}/>
@@ -126,6 +130,12 @@ const Body = () => {
   //   return <Shimmer/>;
   // }
 
+  const onlineStatus = useOnlineStatus();
+
+  if(onlineStatus === false) return <h1>Looks like you are offline!! Please check your internet connection
+      <TicTacToe />
+  </h1>
+
   return listOfRestaurant === 0 ? <Shimmer/> :(
     <div className="body">
       <div className="filter">
@@ -156,7 +166,7 @@ const Body = () => {
       </div>
       <div className="res-container">
         {filteredRestaurant.map((restaurant) => (
-          <RestaurantCard key={restaurant.info.id} resData={restaurant} />
+          <Link key={restaurant.info.id} to={"/restaurants/"+ restaurant.info.id}><RestaurantCard resData={restaurant} /></Link >
         ))}
       </div>
     </div>

@@ -77,4 +77,33 @@ actual DOM -->
 <!-- How const var is changed here -  const [btnName,setBtnName] = useState("Login"); ==> Its because the second time its called a 
 new btnName is created. And header will be rendered again but only the button is changed -->
 
-<!-- Whenever a state varibale update react triggers a reconciliation cycle -- 
+<!-- Whenever a state varibale update react triggers a reconciliation cycle -->
+
+<!--if there is no dependency array that is no [] given as sec parameter to useffect ==> useEffect called on every render
+    if there is empy dependency array = [] ==> useeffect is called on initial render (just once)
+    if dependency array is [btnName] ==> called everytime btnName is updated
+    useEffect(()=>{
+
+    },[]) -->
+
+<!-- Link to navigate to pages for router -->
+<!-- createBrowserRouter to create the routes -->
+<!-- useRouteError to get the error -->
+
+<!-- Two types of routing in web app 
+Client side routing
+Server side routing
+-->
+
+<!-- In class based components the life cycle is like - first constructor is called , then render is called,
+then the componentDidMount is called -->
+
+<!--Timing and Avoiding Race Conditions:componentDidMount is called after the component has been mounted to the DOM. A
+t this point, the component is ready to interact with the browser's Document Object Model (DOM).
+Placing API calls in componentDidMount ensures that you're fetching data after the component has been initialized and rendered. 
+This timing helps prevent race conditions, where data arrives before the component is ready to handle it. -->
+
+//https://projects.wojtekmaj.pl/react-lifecycle-methods-diagram/
+
+<!-- For optimizing the app we need to reduce the size of the bundled js file.. This process is called
+chunking or code splitting or lazy loading or dynamic bundling or on demand loading or dynamic import-->
