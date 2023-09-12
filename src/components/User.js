@@ -17,7 +17,7 @@ const User = (props) => {
   },[]);
 
   return (
-    <div className="user-card">
+    <div className="user-card m-4 p-4 rounded-lg bg-gray-100 w-56">
       <h3>Count fn : {count}</h3>
       <h3>Count fn : {count2}</h3>
       <h2>Name : {props.name}</h2>
