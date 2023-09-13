@@ -107,3 +107,18 @@ This timing helps prevent race conditions, where data arrives before the compone
 
 <!-- For optimizing the app we need to reduce the size of the bundled js file.. This process is called
 chunking or code splitting or lazy loading or dynamic bundling or on demand loading or dynamic import-->
+
+<!-- rem stands for root em, which is a measurement unit that refers to the font-size of the root element of a document. 
+It is a relative unit, which means all values that use it change when the root's font-size changes. The root element in this 
+case refers to the html element. 1rem means 1 times the root font-size-->
+
+<!--Controlled and uncontrolled component eg - RestaurantCategory is a controlled component by RestaurantMenu coz
+of showItems and it is not having its own state -->
+
+<-- Lifting state up in React concept - accordion example toggle-->
+
+<--Props drilling - passing data from parent to child components and to grandchild components -->
+
+<!--We can access the usercontext in class component by using UserContext.Consumer -->
+
+<!-- To install redux we need these two packages - npm install @reduxjs/toolkit & npm i react-redux -->

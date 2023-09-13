@@ -1,4 +1,5 @@
 import React from "react";
+import UserContext from "../utils/UserContext";
 
 class UserClass extends React.Component {
   constructor(props) {
@@ -70,6 +71,9 @@ class UserClass extends React.Component {
         >Count Increase</button> */}
         <img className="my-image" src={avatar_url}></img>
         <h2>Name : {name}</h2>
+        <div>LoggedInUser : <UserContext.Consumer>
+          {({loggedInUser})=><h1 className="font-bold text-xl">{loggedInUser}</h1>}
+          </UserContext.Consumer></div>
         <h3>Location : {location}</h3>
         <h4>Contact : @gayumarch15 {company}</h4>
       </div>

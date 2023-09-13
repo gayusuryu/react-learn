@@ -11,20 +11,20 @@ import { CDN_URL } from "../utils/constants";
 const RestaurantCard = (props) => {
   //  const {resName,cuisine} = props;
   const { resData } = props;
-  console.log("resData",resData)
+  // console.log("resData", resData);
 
-  const { name, cuisines, avgRating, costForTwo ,sla } = resData?.info;
+  const { name, cuisines, avgRating, costForTwo, sla } = resData?.info;
   return (
     // <div className="res-card" style={styleCard}> we can give style like this or like below
     // <div className="res-card" style={{backgroundColor :"#f0f0f0"}}>
     // <div className="res-card" style={{ backgroundColor: "#f0f0f0" }}>
-       <div className="p-4 m-4 w-[250px] h-auto rounded-lg bg-gray-100 hover:bg-gray-200">
+    <div className="p-4 m-4 w-[250px] h-auto rounded-lg bg-gray-100 hover:bg-gray-200">
       {/* <img
         className="res-logo"
         alt="res-logo"
         src={CDN_URL + resData?.info?.cloudinaryImageId}
       /> */}
-         <img
+      <img
         className="rounded-lg h-[250px]"
         alt="res-logo"
         src={CDN_URL + resData?.info?.cloudinaryImageId}
@@ -36,6 +36,20 @@ const RestaurantCard = (props) => {
       <h4>{sla.deliveryTime} minutes</h4>
     </div>
   );
+};
+
+//HIgher Order Component - Take one component and modify/enhance changes and return another component
+//Input ==> RestaurantCard output==>RestaurantCard promoted
+
+export const withPromotedLabel = (RestaurantCard) => {
+  return (props) => {
+    return (
+      <div>
+        <label className="absolute bg-black text-white m-2 p-2 rounded-lg">Promoted</label>
+        <RestaurantCard {...props}/>
+      </div>
+    );
+  };
 };
 
 export default RestaurantCard;

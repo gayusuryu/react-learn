@@ -1,10 +1,11 @@
-import RestaurantCard from "./RestaurantCard";
+import RestaurantCard ,{withPromotedLabel} from "./RestaurantCard";
 import { Link } from "react-router-dom";
 import resList from "../utils/mockData";
-import { useEffect, useState } from "react";
+import { useEffect, useState,useContext } from "react";
 import Shimmer from "./Shimmer";
 import useOnlineStatus from "../utils/useOnlineStatus";
 import TicTacToe from "../utils/TicTacToe";
+import UserContext from "../utils/UserContext";
 
 
 // <RestaurantCard resName="Platez" cuisine="Biriyani , Malabar , Asian "/>
@@ -108,7 +109,9 @@ const Body = () => {
 
   const [searchText,setSearchText] = useState("");
 //Whenever a state varibale update react triggers a reconciliation cycle (i.e, re-renders the component)
-  console.log("Body rendered")
+  console.log("Body rendered",listOfRestaurant);
+
+  const RestaurantCardPromotedComponent = withPromotedLabel(RestaurantCard);
 
   useEffect(()=>{
     fetchData();
@@ -135,6 +138,8 @@ const Body = () => {
   if(onlineStatus === false) return <h1>Looks like you are offline!! Please check your internet connection
       <TicTacToe />
   </h1>
+
+  const {loggedInUser,setUserName} = useContext(UserContext);
 
   return listOfRestaurant === 0 ? <Shimmer/> :(
     <div className="body">
@@ -189,11 +194,20 @@ const Body = () => {
           Top rated Restaurant
         </button>
         </div>
+        <div className="m-4 p-4 flex items-center">
+          <label>Username : </label>
+          <input className="border border-black p-2" 
+          value={loggedInUser}
+          onChange={(e)=>setUserName(e.target.value)}/>
+        </div>
       </div>
       {/* <div className="res-container"> */}
       <div className="flex flex-wrap">
         {filteredRestaurant.map((restaurant) => (
-          <Link key={restaurant.info.id} to={"/restaurants/"+ restaurant.info.id}><RestaurantCard resData={restaurant} /></Link >
+          <Link key={restaurant.info.id} to={"/restaurants/"+ restaurant.info.id}>
+            {restaurant.info.avgRating>4.5 ? (<RestaurantCardPromotedComponent resData={restaurant}/>) :  (<RestaurantCard resData={restaurant} />)}
+           
+            </Link >
         ))}
       </div>
     </div>
